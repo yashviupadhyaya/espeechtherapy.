@@ -28,7 +28,7 @@ console.log(name);
              rec.ondataavailable = e => {
                audioChunks.push(e.data);
                if (rec.state == "inactive"){
-                 let blob = new Blob(audioChunks,{type:'audio/mpeg-3'});
+                 let blob = new Blob(audioChunks,{type:'audio/wav'});
                  recordedAudio.src = URL.createObjectURL(blob);
                  recordedAudio.controls=true;
                  recordedAudio.autoplay=false;
