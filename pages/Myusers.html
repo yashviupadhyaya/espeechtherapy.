@@ -11,9 +11,13 @@
     <link href="../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/libs/css/style.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
 </head>
 
 <body>
+    <script src="app.js" type="text/javascript"></script>
     <!-- ============================================================== -->
     <!-- main wrapper -->
     <!-- ============================================================== -->
@@ -40,7 +44,7 @@ John Abraham</h5>
                                 </div>
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                                <a id="btnLogout" class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -383,7 +387,7 @@ John Abraham</h5>
                             <div class="card">
                                 <h5 class="card-header">Hoverable Table</h5>
                                 <div class="card-body">
-                                    <table class="table table-border">
+                                    <table id="userTable" class="table table-border">
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
@@ -452,6 +456,8 @@ John Abraham</h5>
     <script src="../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
     <script src="../assets/vendor/custom-js/jquery.multi-select.html"></script>
     <script src="../assets/libs/js/main-js.js"></script>
+    <script src="logout.js" type="text/javascript"></script>
+    <script src="displayUser.js" type="text/javascript"></script>
 </body>
  
 </html>

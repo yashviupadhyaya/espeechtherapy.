@@ -11,9 +11,14 @@
     <link href="../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/libs/css/style.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
 </head>
 
 <body>
+    <script src="app.js" type="text/javascript"></script>
     <!-- ============================================================== -->
     <!-- main wrapper -->
     <!-- ============================================================== -->
@@ -34,13 +39,12 @@
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
-                                    <h5 class="mb-0 text-white nav-user-name">
-John Abraham</h5>
+                                    <h5 class="mb-0 text-white nav-user-name">John Abraham</h5>
                                     <span class="status"></span><span class="ml-2">Available</span>
                                 </div>
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                                <a id="btnLogout" class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -70,20 +74,19 @@ John Abraham</h5>
                                 <h5 class="card-header">Upload file</h5>
                                 <div class="card-body">
 
-                           <form id="validationform" data-parsley-validate="" novalidate="">
+                           <!-- <form id="validationform" data-parsley-validate="" novalidate=""> -->
 
                               <div class="form-group row" style="justify-content: center;">
                                     <div class="buttons">
                                         <button class="btn btn-outline-primary" id="record">Record</button>
                                         <button id="stopRecord" class=" btn btn-outline-danger" disabled>Stop</button>
-                                    </div></div>
-      <p>
-        <audio id="recordedAudio"></audio>
-    
-      </p>
+                                    </div>
+                                
+                                </div>
+      
                               <div class="form-group row" style="justify-content: center;">
                                     <p>
-                                        <audio id="recordedAudio" style="margin-left: 40%"></audio>
+                                        <audio id="recordedAudio"></audio>
     
                                     </p></div>
 
@@ -102,16 +105,17 @@ John Abraham</h5>
                                         <div class="form-group row" >
                                             <label class="col-12 col-sm-2 col-form-label text-sm-right">Comments</label>
                                             <div class="col-8 col-sm-8 col-lg-8">
-                                                <textarea required="" class="form-control"></textarea>
+                                                <textarea id="comment" required="" class="form-control"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group row text-right" style="justify-content: center;">
                                             <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                                <button type="submit" class="btn btn-space btn-primary">Submit</button>
-                                                <button class="btn btn-space btn-secondary">Cancel</button>
+                                                <progress value="0" max="100" id="uploader" style="margin-right: 1%;">0%</progress>
+                                                <button value="upload" id="fileButton" class="btn btn-space btn-primary" disabled>Submit</button>
+                                                <button id="cancel" class="btn btn-space btn-secondary">Cancel</button>
                                             </div>
                                         </div>
-                                    </form>
+                                    <!-- </form> -->
                                 </div>
                             </div>
                         </div>
@@ -179,33 +183,9 @@ John Abraham</h5>
     <script src="../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
     <script src="../assets/vendor/custom-js/jquery.multi-select.html"></script>
     <script src="../assets/libs/js/main-js.js"></script>
+    <script src="logout.js" type="text/javascript"></script>
+    <script src="upload.js" type="text/javascript"></script>
 </body>
- 
-      <!-- The core Firebase JS SDK is always required and must be listed first -->
-      <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-storage.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-auth.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-firestore.js"></script>
-      <!-- TODO: Add SDKs for Firebase products that you want to use
-          https://firebase.google.com/docs/web/setup#config-web-app -->
-      <script>
-      // Your web app's Firebase configuration
-        //import * as firebase from 'firebase';
-        //import  firebase from 'firebase/app';
-        //import 'firebase/storage';
-        var firebaseConfig = {
-          apiKey: "AIzaSyCnYIuKO1v4dX9h6L6kwkcECnmLYp53K54",
-          authDomain: "speechtherapy-ea86f.firebaseapp.com",
-          databaseURL: "https://speechtherapy-ea86f.firebaseio.com",
-          projectId: "speechtherapy-ea86f",
-          storageBucket: "gs://speechtherapy-ea86f.appspot.com/",
-          messagingSenderId: "848571502418",
-          appId: "1:848571502418:web:b7114d32712868b5"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-      </script>
-      <script src="actions.js" type="text/javascript"></script>
 
 </html>
 
