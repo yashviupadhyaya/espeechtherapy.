@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libs/css/style.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <script src="app.js" type="text/javascript"></script>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+      <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="adduser.html">E-Speech-Therapy</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">
+John Abraham</h5>
+                                    <span class="status"></span><span class="ml-2">Available</span>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+                                <a id="btnLogout" class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+            <div class="container-fluid dashboard-content">
+
+
+<div class="row">
+	                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+	                        <div class="page-header">
+	                            <!-- <h3 class="mb-2">User Profile</h3> -->
+	                            <div class="page-breadcrumb">
+	                                <nav aria-label="breadcrumb">
+	                                    <ol class="breadcrumb">
+	                                        <li class="breadcrumb-item"><a href="Myusers.html" class="breadcrumb-link">My Cases</a></li>
+	                                        <li class="breadcrumb-item active" aria-current="page">User name</li>
+	                                    </ol>
+	                                </nav>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+
+                <div class="row" style="justify-content: center;">
+                	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+	                        <div class="card influencer-profile-data">
+	                            <div class="card-body">
+	                                <div class="row">
+	                                    <div class="col-xl-2 col-lg-4 col-md-4 col-sm-4 col-12">
+	                                        <div class="text-center">
+	                                            </div>
+	                                        </div>
+	                                        <div class="col-xl-10 col-lg-8 col-md-8 col-sm-8 col-12">
+	                                            <div class="user-avatar-info">
+	                                                <div class="m-b-20">
+	                                                    <div class="user-avatar-name">
+	                                                        <h2 id="headName" class="mb-1"></h2>
+	                                                    </div>
+	                                                    <div class="rating-star  d-inline-block">
+	                                                        <i class="fa fa-fw fa-star"></i>
+	                                                        <i class="fa fa-fw fa-star"></i>
+	                                                        <i class="fa fa-fw fa-star"></i>
+	                                                        <i class="fa fa-fw fa-star"></i>
+	                                                        <i class="fa fa-fw fa-star"></i>
+	                                                        <p class="d-inline-block text-dark">Progress </p>
+	                                                    </div>
+	                                                </div>
+	                                                <!--  <div class="float-right"><a href="#" class="user-avatar-email text-secondary">www.henrybarbara.com</a></div> -->
+	                                                <div class="user-avatar-address">
+	                                                    <p class="border-bottom pb-3">
+	                                                        <!-- <span class="d-xl-inline-block d-block mb-2"><i class="fa fa-map-marker-alt mr-2 text-primary "></i>4045 Denver AvenueLos Angeles, CA 90017</span> -->
+	                                                        <span id="prob" class="mb-2 ml-xl-4 d-xl-inline-block d-block">Problem </span>
+	                                                        <span id="gender" class=" mb-2 d-xl-inline-block d-block ml-xl-4">Gender 
+	                                                                </span>
+	                                                        <span id="age" class=" mb-2 d-xl-inline-block d-block ml-xl-4">Age </span>
+	                                                    </p>
+
+	                                                </div>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                        </div>
+                    <div class="col-xl-10">
+                        <!-- ============================================================== -->
+                        <!-- pageheader  -->
+                        <!-- ============================================================== -->
+
+                        <!-- ============================================================== -->
+                        <!-- end pageheader  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- overview  -->
+                        <!-- ============================================================== -->
+                       <!-- ============================================================== -->
+                        <!-- end overview  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- simple cards  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- end simple cards  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- image cards  -->
+                        <!-- ============================================================== -->
+
+                        <!-- ============================================================== -->
+                        <!-- end image cards  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- card header footer  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- end card header footer  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- card footer link  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- end card footer link  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- card navigaion  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- end card navigaion  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- card masonary  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- end card masonary  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- card list group  -->
+                        <!-- ============================================================== -->
+                        <!-- end card list group  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- card varience  -->
+                        <!-- ============================================================== -->
+                        <div class="row" style="justify-content: center;">
+
+                            <!-- grid column -->
+                            <div class="col-xl-2 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <!-- .card -->
+                                <div class="card card-figure">
+                                    <!-- .card-figure -->
+                                    <figure class="figure">
+                                        <!-- .figure-img -->
+                                        <div class="figure-img">
+                                            <img class="img-fluid" src="img/a.png" alt="Card image cap">
+                                            <a id="a" href="#" class="img-link">
+                                                <div class="tile tile-circle ">
+                                                    <span><i class="fas fa-circle text-primary fa-2x"></i></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.figure-img -->
+                                        <!-- .figure-caption -->
+<!--                                         <figcaption class="figure-caption">
+                                            <h6 class="figure-title"><a href="#">Zoom action</a></h6>
+                                            <p class="text-muted mb-0"> Give some text description </p>
+                                        </figcaption> -->
+                                        <!-- /.figure-caption -->
+                                    </figure>
+                                    <!-- /.card-figure -->
+                                </div>
+                            </div>
+                            <!-- /grid column -->
+                            <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <!-- .card -->
+                                <div class="card card-figure">
+                                    <!-- .card-figure -->
+                                    <figure class="figure">
+                                        <!-- .figure-img -->
+                                        <div class="figure-img">
+                                            <img class="img-fluid" src="img/aa.png" alt="Card image cap">
+                                            <a id="aa" href="#" class="img-link">
+                                                <div class="tile tile-circle ">
+                                                    <span><i class="fas fa-circle text-primary fa-2x"></i></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.figure-img -->
+                                        <!-- .figure-caption -->
+<!--                                         <figcaption class="figure-caption">
+                                            <h6 class="figure-title"><a href="#">Zoom action</a></h6>
+                                            <p class="text-muted mb-0"> Give some text description </p>
+                                        </figcaption> -->
+                                        <!-- /.figure-caption -->
+                                    </figure>
+                                    <!-- /.card-figure -->
+                                </div>
+                            </div>
+                            <!-- /grid column -->                            <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <!-- .card -->
+                                <div class="card card-figure">
+                                    <!-- .card-figure -->
+                                    <figure class="figure">
+                                        <!-- .figure-img -->
+                                        <div class="figure-img">
+                                            <img class="img-fluid" src="img/i.png" alt="Card image cap">
+                                            <a id="i" href="#" class="img-link">
+                                                <div class="tile tile-circle ">
+                                                    <span><i class="fas fa-circle text-primary fa-2x"></i></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.figure-img -->
+                                        <!-- .figure-caption -->
+<!--                                         <figcaption class="figure-caption">
+                                            <h6 class="figure-title"><a href="#">Zoom action</a></h6>
+                                            <p class="text-muted mb-0"> Give some text description </p>
+                                        </figcaption> -->
+                                        <!-- /.figure-caption -->
+                                    </figure>
+                                    <!-- /.card-figure -->
+                                </div>
+                            </div>
+                            <!-- /grid column -->                            <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <!-- .card -->
+                                <div class="card card-figure">
+                                    <!-- .card-figure -->
+                                    <figure class="figure">
+                                        <!-- .figure-img -->
+                                        <div class="figure-img">
+                                            <img class="img-fluid" src="img/ii.png" alt="Card image cap">
+                                            <a id="ii" href="#" class="img-link">
+                                                <div class="tile tile-circle ">
+                                                    <span><i class="fas fa-circle text-primary fa-2x"></i></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.figure-img -->
+                                        <!-- .figure-caption -->
+<!--                                         <figcaption class="figure-caption">
+                                            <h6 class="figure-title"><a href="#">Zoom action</a></h6>
+                                            <p class="text-muted mb-0"> Give some text description </p>
+                                        </figcaption> -->
+                                        <!-- /.figure-caption -->
+                                    </figure>
+                                    <!-- /.card-figure -->
+                                </div>
+                            </div>
+                            <!-- /grid column -->                            <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <!-- .card -->
+                                <div class="card card-figure">
+                                    <!-- .card-figure -->
+                                    <figure class="figure">
+                                        <!-- .figure-img -->
+                                        <div class="figure-img">
+                                            <img class="img-fluid" src="img/u.png" alt="Card image cap">
+                                            <a id="u" href="#" class="img-link">
+                                                <div class="tile tile-circle ">
+                                                    <span><i class="fas fa-circle text-primary fa-2x"></i></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.figure-img -->
+                                        <!-- .figure-caption -->
+<!--                                         <figcaption class="figure-caption">
+                                            <h6 class="figure-title"><a href="#">Zoom action</a></h6>
+                                            <p class="text-muted mb-0"> Give some text description </p>
+                                        </figcaption> -->
+                                        <!-- /.figure-caption -->
+                                    </figure>
+                                    <!-- /.card-figure -->
+                                </div>
+                            </div>
+                            <!-- /grid column -->                            <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <!-- .card -->
+                                <div class="card card-figure">
+                                    <!-- .card-figure -->
+                                    <figure class="figure">
+                                        <!-- .figure-img -->
+                                        <div class="figure-img">
+                                            <img class="img-fluid" src="img/uu.png" alt="Card image cap">
+                                            <a id="uu" href="#" class="img-link">
+                                                <div class="tile tile-circle ">
+                                                    <span><i class="fas fa-circle text-primary fa-2x"></i></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.figure-img -->
+                                        <!-- .figure-caption -->
+<!--                                         <figcaption class="figure-caption">
+                                            <h6 class="figure-title"><a href="#">Zoom action</a></h6>
+                                            <p class="text-muted mb-0"> Give some text description </p>
+                                        </figcaption> -->
+                                        <!-- /.figure-caption -->
+                                    </figure>
+                                    <!-- /.card-figure -->
+                                </div>
+                            </div>                            <!-- /grid column -->                            
+                            <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <!-- .card -->
+                                <div class="card card-figure">
+                                    <!-- .card-figure -->
+                                    <figure class="figure">
+                                        <!-- .figure-img -->
+                                        <div class="figure-img">
+                                            <img class="img-fluid" src="img/e.png" alt="Card image cap">
+                                            <a id="e" href="#" class="img-link">
+                                                <div class="tile tile-circle ">
+                                                    <span><i class="fas fa-circle text-primary fa-2x"></i></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.figure-img -->
+                                        <!-- .figure-caption -->
+<!--                                         <figcaption class="figure-caption">
+                                            <h6 class="figure-title"><a href="#">Zoom action</a></h6>
+                                            <p class="text-muted mb-0"> Give some text description </p>
+                                        </figcaption> -->
+                                        <!-- /.figure-caption -->
+                                    </figure>
+                                    <!-- /.card-figure -->
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <!-- .card -->
+                                <div class="card card-figure">
+                                    <!-- .card-figure -->
+                                    <figure class="figure">
+                                        <!-- .figure-img -->
+                                        <div class="figure-img">
+                                            <img class="img-fluid" src="img/ai.png" alt="Card image cap">
+                                            <a id="ai" href="#" class="img-link">
+                                                <div class="tile tile-circle ">
+                                                    <span><i class="fas fa-circle text-primary fa-2x"></i></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.figure-img -->
+                                        <!-- .figure-caption -->
+<!--                                         <figcaption class="figure-caption">
+                                            <h6 class="figure-title"><a href="#">Zoom action</a></h6>
+                                            <p class="text-muted mb-0"> Give some text description </p>
+                                        </figcaption> -->
+                                        <!-- /.figure-caption -->
+                                    </figure>
+                                    <!-- /.card-figure -->
+                                </div>
+                            </div>
+                            <!-- /grid column -->                            <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <!-- .card -->
+                                <div class="card card-figure">
+                                    <!-- .card-figure -->
+                                    <figure class="figure">
+                                        <!-- .figure-img -->
+                                        <div class="figure-img">
+                                            <img class="img-fluid" src="img/o.png" alt="Card image cap">
+                                            <a id="o" href="#" class="img-link">
+                                                <div class="tile tile-circle ">
+                                                    <span><i class="fas fa-circle text-primary fa-2x"></i></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.figure-img -->
+                                        <!-- .figure-caption -->
+<!--                                         <figcaption class="figure-caption">
+                                            <h6 class="figure-title"><a href="#">Zoom action</a></h6>
+                                            <p class="text-muted mb-0"> Give some text description </p>
+                                        </figcaption> -->
+                                        <!-- /.figure-caption -->
+                                    </figure>
+                                    <!-- /.card-figure -->
+                                </div>
+                            </div>
+                            <!-- /grid column -->                            <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <!-- .card -->
+                                <div class="card card-figure">
+                                    <!-- .card-figure -->
+                                    <figure class="figure">
+                                        <!-- .figure-img -->
+                                        <div class="figure-img">
+                                            <img class="img-fluid" src="img/au.png" alt="Card image cap">
+                                            <a id="au" href="#" class="img-link">
+                                                <div class="tile tile-circle ">
+                                                    <span><i class="fas fa-circle text-primary fa-2x"></i></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.figure-img -->
+                                        <!-- .figure-caption -->
+<!--                                         <figcaption class="figure-caption">
+                                            <h6 class="figure-title"><a href="#">Zoom action</a></h6>
+                                            <p class="text-muted mb-0"> Give some text description </p>
+                                        </figcaption> -->
+                                        <!-- /.figure-caption -->
+                                    </figure>
+                                    <!-- /.card-figure -->
+                                </div>
+                            </div>
+                            <!-- /grid column -->                            
+                            </div>
+                            <!-- /grid column -->                            <!-- /grid column -->
+                    </div>
+                    <!-- ============================================================== -->
+                    <!--  sidebar nav fixed  -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!--  end sidebar nav fixed  -->
+                    <!-- ============================================================== -->
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src='../assets/libs/js/main-js.js'></script>
+    <script src="logout.js" type="text/javascript"></script>
+    <script src="cardDisp.js" type="text/javascript"></script>
+</body>
+ 
+</html>
